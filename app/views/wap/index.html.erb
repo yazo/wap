@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" " http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+		<title>免费ing</title>
+		<style type="text/css">		img {
+				border: 0px;
+			}
+			body, div, p, span, td {
+				font-size: 14px;
+				padding: 0 0 0 2px;
+				margin: 0;
+				line-height: 20px;
+			}
+			.con {
+				line-height: 18px;
+				color: #999;
+				padding: 3px 0 3px 2px;
+				border-top: 1px solid #e2edfb;
+			}
+			.yznew {
+				line-height: 60px;
+				padding: 3px 0 3px 2px;
+				border-bottom: 1px solid #CCFF99;
+			}
+			.yztitle {
+				background-color: #99FFFF;
+				color: #09c;
+				padding: 2px 0 2px 2px;
+				font-weight: 700
+			}
+</style>
+	</head>
+	<body>
+		<img src="/img/logo.gif"/>
+		<br/>
+		<!--<div class="con"><div class="yztitle">【今日推荐】</div>-->
+		<div class="con">
+			<div class="yztitle">
+				【最新推出】&nbsp;&nbsp;<a href="">更多>></a>
+			</div>
+		</div>
+		<div class="yznew">
+			<table>
+				<tr>
+					<td rowspan="2" height="50" width="55"><img src="/img/ndesk/logo.jpg" height="50" width="50"/></td>
+					<td><a href="/content/ndesk.html">N桌面</a></td>
+				</tr>
+				<tr>
+					<td>类型：应用软件 系统</td>
+				</tr>
+			</table>
+		</div>
+		<!--<table border="0">
+		<tr>
+		<td width="60"  height="60" align="center"><img src="/img/ndesk/logo.jpg" height="50" width="50" /></td>
+		<td width="60" align="center"><img src="/img/pingzi/logo.jpg" height="50" width="50" /></td>
+		<td width="60" align="center"><img src="/img/9e/logo.png" height="50" width="50" /></td>
+		</tr>
+		<tr>
+		<td align="center">N桌面<td align="center">漂流瓶</td><td align="center">久忆</td>
+		</tr>
+
+		</table>-->
+		
+		
+		
+		<% SoftwareType.where(:parent_id => nil ).each do |main_type| %>
+		<div class="con">
+			<div class="yztitle">
+				【<%= main_type.title %>】
+				&nbsp;&nbsp;<a href="/app_all.html">更多>></a>
+			</div>
+		</div>
+		
+			<% main_type.children.each do |t| %>
+				[<a href="/app_system.html"><%= t.title%></a>]&nbsp; 
+				<% t.softwares.each do |s| %>
+					<a href="wap/<%= s.id %>"><%= s.title %></a>&nbsp;
+				<% end %>
+				<br />
+			<% end %>
+		<% end %>
+		
+		
+		
+	
+	</body>
+</html>

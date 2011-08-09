@@ -1,0 +1,2 @@
+module MobileTypesHelper
+end

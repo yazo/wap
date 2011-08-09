@@ -1,0 +1,2 @@
+module SoftwareTypesHelper
+end
