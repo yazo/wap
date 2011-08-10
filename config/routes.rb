@@ -65,4 +65,5 @@ Wap::Application.routes.draw do
   match '/' => 'home#index'
   match 'wap' => 'wap#index'
   match 'wap/:id' => 'wap#show'
+  match 'wap/softwares/:id' => 'wap#more'
 end
