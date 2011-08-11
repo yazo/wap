@@ -1,4 +1,6 @@
 Wap::Application.routes.draw do
+  resources :photos
+
   resources :mobile_types
 
   resources :software_types
