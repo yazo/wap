@@ -1,4 +1,6 @@
 Wap::Application.routes.draw do
+  resources :photos
+
   resources :mobile_types
 
   resources :software_types
@@ -67,4 +69,5 @@ Wap::Application.routes.draw do
   match 'wap/:id' => 'wap#show'
   match 'img' => 'img'
   match 'more/:id' =>'wap#more_type'
+  match 'wap/softwares/:id' => 'wap#more'
 end
