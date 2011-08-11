@@ -65,4 +65,6 @@ Wap::Application.routes.draw do
   match '/' => 'home#index'
   match 'wap' => 'wap#index'
   match 'wap/:id' => 'wap#show'
+  match 'img' => 'img'
+  match 'more/:id' =>'wap#more_type'
 end
