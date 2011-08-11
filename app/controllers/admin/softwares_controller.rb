@@ -1,12 +1,12 @@
-class SoftwaresController < ApplicationController
+class Admin::SoftwaresController < ApplicationController
   # GET /softwares
   # GET /softwares.xml
   def index
-    @softwares = Software.all
+    @admin_softwares = Admin::Software.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @softwares }
+      format.xml  { render :xml => @admin_softwares }
     end
   end
 
