@@ -1,4 +1,4 @@
-class MobileTypesController < ApplicationController
+class Admin::MobileTypesController < Admin::AdminController
   # GET /mobile_types
   # GET /mobile_types.xml
   def index

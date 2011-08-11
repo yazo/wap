@@ -1,11 +1,11 @@
 Wap::Application.routes.draw do
-  resources :photos
-
-  resources :mobile_types
-
-  resources :software_types
-
-  resources :softwares
+  
+  namespace :admin do
+    resources :photos
+    resources :mobile_types
+    resources :software_types
+    resources :softwares
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -64,10 +64,12 @@ Wap::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   
-  match '/' => 'home#index'
+  match '/' => 'admin/home#index'
   match 'wap' => 'wap#index'
   match 'wap/:id' => 'wap#show'
-  match 'img' => 'img'
   match 'more/:id' =>'wap#more_type'
   match 'wap/softwares/:id' => 'wap#more'
+  
+  match 'login' => 'login#login'
+  match 'logout' => 'login#logout'
 end
