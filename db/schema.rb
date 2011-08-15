@@ -23,9 +23,10 @@ ActiveRecord::Schema.define(:version => 20110812000001) do
     t.integer "mobile_type_id"
   end
 
-  create_table "photos", :force => true do |t|
+  create_table "photos", :id => false, :force => true do |t|
+    t.integer  "id",                         :null => false
     t.integer  "software_id"
-    t.integer  "photo_type"
+    t.string   "photo_type",  :limit => nil
     t.datetime "created_at"
     t.datetime "updated_at"
   end

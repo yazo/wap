@@ -76,7 +76,7 @@ class Admin::MobileTypesController < Admin::AdminController
     @mobile_type.destroy
 
     respond_to do |format|
-      format.html { redirect_to(mobile_types_url) }
+      format.html { redirect_to(admin_mobile_types_path) }
       format.xml  { head :ok }
     end
   end
