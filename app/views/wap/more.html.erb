@@ -21,8 +21,11 @@
     <% SoftwareType.where(:parent_id => s.id ).each do |main_type| %>
         
           <% main_type.softwares.each do |so| %>
-					<a href="/wap/<%= so.id %>"><%= so.title %></a><br />
-				<% end %>
+            
+         	 <% ph=Photo.where(:software_id => so.id,:photo_type => '1').first %>
+ 					 <img src="<%= "/images/#{ph.photo_name}" if ph %>"  width='20px' height='20px'/>
+					 <a href="/wap/<%= so.id %>"><%= so.title %></a><br />	
+			<% end %>
     
     <% end %>
 
