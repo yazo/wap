@@ -5,26 +5,55 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+  
+<style type="text/css">
+body {margin:0;padding:0;}
+#header{
+	background-color:#315ca1;
+	height:100px;
+}
+.main_menu{
+	padding-left:100px; padding: 20px;
+}
+.main_menu li{float: left;width:80px;border:solid 1px #ccc;list-style: none;text-align: center;}
+.main_menu li:hover{background-color:lightYellow;}
+.main_menu li a {color:white;text-decoration: none;}
+#login{float:right;margin-right:100px;}
+
+
+#main{background-color: #d4d4d4;padding:24px;}
+#content{width:80%;margin:auto;background-color:white;border:solid 1px #999;padding:12px;}
+
+#footer {height: 60px;padding-top: 20px;text-align: center;}
+</style>
 </head>
 <body>
 
 
-<div>
 	<div id="header">
-		<ul>
-			<li><a>aaaa</a></li>
-			<li><a>aaaa</a></li>
-			<li><a>aaaa</a></li>
-			
+		<ul class="main_menu">
+	<li><a href="../wap">Wap</a></li>
+	<li><a href="softwares">Softwares</a></li>
+	<li><a href="mobile_types">手机类型</a></li>
+	<li><a href="software_types">软件类型</a></li>
+	<li><a href="photos">图片上传</a></li>
 		</ul>
-	</div>
-	<div id="body">
-<%= yield %>		
-	</div>
-	<div id="footer">
 		
+		<div id="login">
+			<a href="/logout">Logout</a>
+		</div>
 	</div>
-</div>
+
+	<div id="main">
+		<div id="content">
+			<%= yield %>
+		</div>		
+	</div>
+	
+	<div id="footer">
+		帮助中心 | 客服中心 | 服务热线：4001888000<br />
+		© 1998 - 2011 Tencent Inc. All Rights Reserved
+	</div>
 
 
 
