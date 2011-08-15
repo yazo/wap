@@ -5,6 +5,8 @@ Wap::Application.routes.draw do
     resources :mobile_types
     resources :software_types
     resources :softwares
+    resources :downfiles
+   
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -66,7 +68,6 @@ Wap::Application.routes.draw do
 
   match 'wap' => 'wap#index'
   match 'wap/:id' => 'wap#show'
-  match 'more/:id' =>'wap#more_type'
   match 'wap/softwares/:id' => 'wap#more'
   
   match 'login' => 'login#login'

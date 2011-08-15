@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  software_id: 
+  file_name: MyString
+  Platform: MyString
+
+two:
+  software_id: 
+  file_name: MyString
+  Platform: MyString

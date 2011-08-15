@@ -60,7 +60,7 @@ class Admin::MobileTypesController < Admin::AdminController
 
     respond_to do |format|
       if @mobile_type.update_attributes(params[:mobile_type])
-        format.html { redirect_to(@mobile_type, :notice => 'Mobile type was successfully updated.') }
+        format.html { redirect_to(admin_mobile_type_path(@mobile_type), :notice => 'Mobile type was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

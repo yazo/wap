@@ -32,17 +32,23 @@
 <br />
 按平台下载：<br />
 <table>
-	<tr><td align="right">QQ定制版本：</td><td><a href="http://wap.b-online.me/application/MobileAnnforQQ_3.21.0518-.apk">免费下载</a></td></tr>
-	<tr><td align="right">android版本：</td><td><a href="http://wap.b-online.me/application/MobileAnn_3.20.0604.apk">免费下载</a></td></tr>
-	<tr><td align="right">WM版本：</td><td><a href="http://wap.b-online.me/application/MobileAnn SMSFilter_6_5.cab">免费下载</a></td></tr>
-	<tr><td align="right">塞班S60v3,v5版本：</td><td><a href="http://wap.b-online.me/application/MA-SafeGuard-Symbian-5th.sis">免费下载</a></td></tr>
+	<% df=Downfile.where(:software_id => params[:id]).each do |file| %>
+	<tr>
+	   <td align="right"> 
+	       <%= file.Platform%>	
+	   </td>
+	   <td>
+	       <a href="/downfile/<%= file.file_name %>">免费下载</a>
+	   </td>
+	</tr>
+	<% end %>
 </table>
 
 简介：
 <%= s.description %>
 <br/>
 <% ph=Photo.where(:software_id => params[:id],:photo_type => '0').each do |photo|%>
-  <img src="/images/<%= photo.photo_name%>" />
+  <img src="/images/<%= photo.photo_name%>" /><br />
 <% end %>
 
 </body>

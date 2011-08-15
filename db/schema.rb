@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110815023229) do
+ActiveRecord::Schema.define(:version => 20110815071719) do
+
+  create_table "downfiles", :force => true do |t|
+    t.integer  "software_id"
+    t.string   "file_name"
+    t.string   "Platform"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "mobile_types", :force => true do |t|
     t.string   "title"
@@ -23,19 +31,12 @@ ActiveRecord::Schema.define(:version => 20110815023229) do
     t.integer "mobile_type_id"
   end
 
-  create_table "photos", :id => false, :force => true do |t|
-    t.integer  "id",                         :null => false
+  create_table "photos", :force => true do |t|
     t.integer  "software_id"
-    t.string   "photo_type",  :limit => nil
+    t.string   "photo_name",  :limit => nil
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "pictures", :force => true do |t|
-    t.integer  "softwareid"
-    t.string   "picname"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "photo_type"
   end
 
   create_table "software_types", :force => true do |t|
