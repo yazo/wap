@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110812000001) do
+ActiveRecord::Schema.define(:version => 20110815023229) do
 
   create_table "mobile_types", :force => true do |t|
     t.string   "title"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(:version => 20110812000001) do
   create_table "photos", :force => true do |t|
     t.integer  "software_id"
     t.integer  "photo_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pictures", :force => true do |t|
+    t.integer  "softwareid"
+    t.string   "picname"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

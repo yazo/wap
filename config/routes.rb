@@ -1,5 +1,7 @@
 Wap::Application.routes.draw do
   
+  resources :pictures
+
   namespace :admin do
     resources :photos
     resources :mobile_types

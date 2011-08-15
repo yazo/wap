@@ -76,7 +76,7 @@ class Admin::SoftwareTypesController < Admin::AdminController
     @software_type.destroy
 
     respond_to do |format|
-      format.html { redirect_to(software_types_url) }
+      format.html { redirect_to(admin_software_types_path) }
       format.xml  { head :ok }
     end
   end
