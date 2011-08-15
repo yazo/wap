@@ -1,4 +1,4 @@
-class PhotosController < ApplicationController
+class Admin::PhotosController < Admin::AdminController
   # GET /photos
   # GET /photos.xml
   def index
@@ -44,7 +44,7 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to(@photo, :notice => 'Photo was successfully created.') }
+        format.html { redirect_to(admin_photo_path(@photo), :notice => 'Photo was successfully created.') }
         format.xml  { render :xml => @photo, :status => :created, :location => @photo }
       else
         format.html { render :action => "new" }

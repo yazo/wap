@@ -1,12 +1,12 @@
-class Admin::SoftwaresController < ApplicationController
+class Admin::SoftwaresController < Admin::AdminController
   # GET /softwares
   # GET /softwares.xml
   def index
-    @admin_softwares = Admin::Software.all
+    @softwares = Software.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @admin_softwares }
+      format.xml  { render :xml => @softwares }
     end
   end
 
@@ -44,7 +44,7 @@ class Admin::SoftwaresController < ApplicationController
 
     respond_to do |format|
       if @software.save
-        format.html { redirect_to(@software, :notice => 'Software was successfully created.') }
+        format.html { redirect_to(admin_software_path(@software), :notice => 'Software was successfully created.') }
         format.xml  { render :xml => @software, :status => :created, :location => @software }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class Admin::SoftwaresController < ApplicationController
 
     respond_to do |format|
       if @software.update_attributes(params[:software])
-        format.html { redirect_to(@software, :notice => 'Software was successfully updated.') }
+        format.html { redirect_to(admin_software_path(@software), :notice => 'Software was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,7 +76,7 @@ class Admin::SoftwaresController < ApplicationController
     @software.destroy
 
     respond_to do |format|
-      format.html { redirect_to(softwares_url) }
+      format.html { redirect_to(admin_softwares_path) }
       format.xml  { head :ok }
     end
   end

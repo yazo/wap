@@ -1,4 +1,4 @@
-class MobileTypesController < ApplicationController
+class Admin::MobileTypesController < Admin::AdminController
   # GET /mobile_types
   # GET /mobile_types.xml
   def index
@@ -44,7 +44,7 @@ class MobileTypesController < ApplicationController
 
     respond_to do |format|
       if @mobile_type.save
-        format.html { redirect_to(@mobile_type, :notice => 'Mobile type was successfully created.') }
+        format.html { redirect_to(admin_mobile_type_path(@mobile_type), :notice => 'Mobile type was successfully created.') }
         format.xml  { render :xml => @mobile_type, :status => :created, :location => @mobile_type }
       else
         format.html { render :action => "new" }

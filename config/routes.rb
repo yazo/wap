@@ -1,7 +1,5 @@
 Wap::Application.routes.draw do
   
-  namespace :admin do resources :software_controllers end
-
   namespace :admin do
     resources :photos
     resources :mobile_types
@@ -64,11 +62,13 @@ Wap::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-    
   match '/' => 'admin/home#index'
 
   match 'wap' => 'wap#index'
   match 'wap/:id' => 'wap#show'
   match 'more/:id' =>'wap#more_type'
   match 'wap/softwares/:id' => 'wap#more'
+  
+  match 'login' => 'login#login'
+  match 'logout' => 'login#logout'
 end

@@ -13,10 +13,20 @@
 
 <body>
 <a href="/wap">返回首页</a><br/>
-<img src="http://wap.b-online.me/img/maws/mobileann_ICON.png"  height="50" width="50"/>&nbsp;<%= s.title %><br />
-类型：应用软件 系统     <br />
+<img src="http://wap.b-online.me/img/maws/mobileann_ICON.png"  />
+&nbsp;<%= s.title %><br />
+类型：<%s.software_types.each do |st|%>
+         
+      <% end %>
+   <br />
 语言：简体中文<br />
-机型：Symbian v3,v5,android,WindowsMobile<br />
+机型：
+<% s.mobile_types.each do |mt|%>
+   <%= mt.title %>
+<%end%>
+
+
+<br />
 按平台下载：<br />
 <table>
 	<tr><td align="right">QQ定制版本：</td><td><a href="http://wap.b-online.me/application/MobileAnnforQQ_3.21.0518-.apk">免费下载</a></td></tr>

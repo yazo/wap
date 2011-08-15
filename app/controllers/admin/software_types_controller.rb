@@ -1,4 +1,4 @@
-class SoftwareTypesController < ApplicationController
+class Admin::SoftwareTypesController < Admin::AdminController
   # GET /software_types
   # GET /software_types.xml
   def index
@@ -44,7 +44,7 @@ class SoftwareTypesController < ApplicationController
 
     respond_to do |format|
       if @software_type.save
-        format.html { redirect_to(@software_type, :notice => 'Software type was successfully created.') }
+        format.html { redirect_to( admin_software_type_path(@software_type), :notice => 'Software type was successfully created.') }
         format.xml  { render :xml => @software_type, :status => :created, :location => @software_type }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class SoftwareTypesController < ApplicationController
 
     respond_to do |format|
       if @software_type.update_attributes(params[:software_type])
-        format.html { redirect_to(@software_type, :notice => 'Software type was successfully updated.') }
+        format.html { redirect_to(admin_software_type_path(@software_type), :notice => 'Software type was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

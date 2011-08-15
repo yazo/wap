@@ -11,13 +11,14 @@
 <% @mobile_types.each do |mobile_type| %>
   <tr>
     <td><%= mobile_type.title %></td>
-    <td><%= link_to 'Show', mobile_type %></td>
-    <td><%= link_to 'Edit', edit_mobile_type_path(mobile_type) %></td>
-    <td><%= link_to 'Destroy', mobile_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', admin_mobile_type_path(mobile_type) %></td>
+    <td><%= link_to 'Edit', edit_admin_mobile_type_path(mobile_type) %></td>
+    <td><%= link_to 'Destroy', admin_mobile_type_path(mobile_type), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Mobile type', new_mobile_type_path %>
+<%= link_to 'New Mobile type', new_admin_mobile_type_path %>
+

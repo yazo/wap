@@ -1,4 +1,4 @@
-<%= form_for(@mobile_type) do |f| %>
+<%= form_for([:admin,@mobile_type]) do |f| %>
   <% if @mobile_type.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mobile_type.errors.count, "error") %> prohibited this mobile_type from being saved:</h2>
