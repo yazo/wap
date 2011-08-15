@@ -48,7 +48,9 @@
 <%= s.description %>
 <br/>
 <% ph=Photo.where(:software_id => params[:id],:photo_type => '0').each do |photo|%>
-  <img src="/images/<%= photo.photo_name%>" /><br />
+
+  <img src="/images/products/<%= photo.photo_name%>" /><br />
+
 <% end %>
 
 </body>
