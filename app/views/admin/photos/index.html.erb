@@ -13,6 +13,7 @@
   <tr>
     <td><%= photo.software_id %></td>
     <td><%= photo.photo_name %></td>
+    <td><%= photo.photo_type %></td>
     <td><%= link_to 'Show', admin_photo_path(photo) %></td>
     <td><%= link_to 'Edit', edit_admin_photo_path(photo) %></td>
     <td><%= link_to 'Destroy', admin_photo_path(photo), :confirm => 'Are you sure?', :method => :delete %></td>

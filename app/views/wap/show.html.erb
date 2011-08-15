@@ -13,7 +13,10 @@
 
 <body>
 <a href="/wap">返回首页</a><br/>
-<img src="http://wap.b-online.me/img/maws/mobileann_ICON.png"  />
+<% ph=Photo.where(:software_id => params[:id],:photo_type => '1').each do |photo|%>
+  <img src="/images/<%= photo.photo_name %>" />
+<% end %>
+
 &nbsp;<%= s.title %><br />
 类型：<%s.software_types.each do |st|%>
          <%= st.title %>
@@ -38,7 +41,9 @@
 简介：
 <%= s.description %>
 <br/>
-<img src="http://wap.b-online.me/img/maws/home.png" /><br />
-<img src="http://wap.b-online.me/img/maws/scanresult.png" />
+<% ph=Photo.where(:software_id => params[:id],:photo_type => '0').each do |photo|%>
+  <img src="/images/<%= photo.photo_name%>" />
+<% end %>
+
 </body>
 </html>

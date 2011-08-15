@@ -3,6 +3,7 @@ class CreatePhotos < ActiveRecord::Migration
     create_table :photos do |t|
       t.integer :software_id
       t.string :photo_name
+      t.integer :photo_type
 
       t.timestamps
     end
