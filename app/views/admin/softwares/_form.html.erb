@@ -39,7 +39,31 @@
       		<%= check_box_tag "software[software_type_ids][]", st.id, current_ids.include?(st.id) %>
     	</label>
   	<% end %>	
-</div>  
+  	
+</div>
+<div>
+	Images:
+	<% @software.resources.images.each do |img| %>
+		<label><%= img.original_filename %></label>
+	<% end %>
+	
+	<% Resource.images.free.each do |img| %>
+		<label><%= img.original_filename %></label>
+		<%= check_box_tag "software[resource_ids][]", img.id, false %>
+	<% end %>
+</div>
+<div>
+	Softwares:
+	<% @software.resources.softwares.each do |img| %>
+		<label><%= img.original_filename %></label>
+	<% end %>
+	
+	<% Resource.softwares.free.each do |img| %>
+		<label><%= img.original_filename %></label>
+		<%= check_box_tag "software[resource_ids][]", img.id, false %>
+	<% end %>
+</div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
