@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110815071719) do
+ActiveRecord::Schema.define(:version => 20110816000001) do
 
   create_table "downfiles", :force => true do |t|
     t.integer  "software_id"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20110815071719) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "photo_type"
+  end
+
+  create_table "resources", :force => true do |t|
+    t.string   "original_filename"
+    t.string   "ext"
+    t.string   "file_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "software_types", :force => true do |t|

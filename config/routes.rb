@@ -6,6 +6,8 @@ Wap::Application.routes.draw do
     resources :software_types
     resources :softwares
     resources :downfiles
+    
+    match 'upload' => 'upload_resource#index'
    
   end
   # The priority is based upon order of creation:
@@ -64,11 +66,11 @@ Wap::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  match '/' => 'admin/home#index'
+  root :to => 'wap#index'
+  match '/admin' => 'admin/home#index'
 
-  match 'wap' => 'wap#index'
-  match 'wap/:id' => 'wap#show'
-  match 'wap/softwares/:id' => 'wap#more'
+  match 'software/:id' => 'wap#show'
+  match 'softwares/:id' => 'wap#more'
   
   match 'login' => 'login#login'
   match 'logout' => 'login#logout'
