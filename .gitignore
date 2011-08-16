@@ -6,3 +6,4 @@ tmp/
 Gemfile.lock
 public/images/products
 public/downfile
+public/upload
