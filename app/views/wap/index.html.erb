@@ -70,14 +70,14 @@
 		<div class="con">
 			<div class="yztitle">
 				【<%= main_type.title %>】
-				&nbsp;&nbsp;<a href="wap/softwares/<%= main_type.id %>">更多>></a>
+				&nbsp;&nbsp;<a href="/softwares/<%= main_type.id %>">更多>></a>
 			</div>
 		</div>
 		
 			<% main_type.children.each do |t| %>
 				[<a href="/app_system.html"><%= t.title%></a>]&nbsp; 
 				<% t.softwares.limit(3).each do |s| %>
-					<a href="wap/<%= s.id %>"><%= s.title %></a>&nbsp;
+					<a href="/software/<%= s.id %>"><%= s.title %></a>&nbsp;
 				<% end %>
 				<br />
 			<% end %>

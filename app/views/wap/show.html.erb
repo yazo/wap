@@ -12,9 +12,9 @@
 </head>
 
 <body>
-<a href="/wap">返回首页</a><br/>
+<a href="/">返回首页</a><br/>
 <% ph=Photo.where(:software_id => params[:id],:photo_type => '1').each do |photo|%>
-  <img src="/images/<%= photo.photo_name %>" />
+  <img src="/images/products/<%= photo.photo_name %>" />
 <% end %>
 
 &nbsp;<%= s.title %><br />
