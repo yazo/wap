@@ -77,7 +77,9 @@
 			<% main_type.children.each do |t| %>
 				[<a href="/app_system.html"><%= t.title%></a>]&nbsp; 
 				<% t.softwares.limit(3).each do |s| %>
+
 					<a href="/software/<%= s.id %>"><%= s.title %></a>&nbsp;
+
 				<% end %>
 				<br />
 			<% end %>
