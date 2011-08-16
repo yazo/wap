@@ -14,7 +14,7 @@
 		</head>
 		<% s = SoftwareType.find(params[:id])%>
 <body>
-	<img src="/images/products/logo.gif"/><br/>
+	<img src="/images/logo.gif"/><br/>
 <!--<div class="con"><div class="yztitle">【今日推荐】</div>-->
 <div class="con"><div class="yztitle">【<%= s.title %>】</div></div>
 
@@ -27,7 +27,7 @@
             
          	 <% ph=Photo.where(:software_id => so.id,:photo_type => '1').first %>
  					 <img src="<%= "/images/products/#{ph.photo_name}" if ph %>"  width='20px' height='20px'/>
-					 <a href="/wap/<%= so.id %>"><%= so.title %></a><br />	
+					 <a href="/software/<%= so.id %>"><%= so.title %></a><br />	
 			<% end %>
 
     
