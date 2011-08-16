@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110816000001) do
+ActiveRecord::Schema.define(:version => 20110816000002) do
+
+  create_table "admin_mynames", :force => true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "gender"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "downfiles", :force => true do |t|
     t.integer  "software_id"
@@ -33,10 +41,10 @@ ActiveRecord::Schema.define(:version => 20110816000001) do
 
   create_table "photos", :force => true do |t|
     t.integer  "software_id"
-    t.string   "photo_name",  :limit => nil
+    t.string   "photo_name"
+    t.integer  "photo_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "photo_type"
   end
 
   create_table "resources", :force => true do |t|
@@ -45,6 +53,8 @@ ActiveRecord::Schema.define(:version => 20110816000001) do
     t.string   "file_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "resource_data_type"
+    t.integer  "resource_data_id"
   end
 
   create_table "software_types", :force => true do |t|
