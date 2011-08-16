@@ -14,7 +14,7 @@
 <body>
 <a href="/wap">返回首页</a><br/>
 <% ph=Photo.where(:software_id => params[:id],:photo_type => '1').each do |photo|%>
-  <img src="/images/products/<%= photo.photo_name %>" />
+  <img src="/images/products/<%= photo.photo_name %>" width="48px" height="48px"/>
 <% end %>
 
 &nbsp;<%= s.title %><br />

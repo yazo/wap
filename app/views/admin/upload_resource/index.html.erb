@@ -4,3 +4,9 @@
   <%= select_tag("file_type", "<option>img</option><option>software</option>".html_safe) %>
   <%= submit_tag %>
 <% end %>
+
+
+Images:
+<% Resource.images.free.each do |img| %>
+	<label><%= img.original_filename %></label>
+<% end %>
