@@ -10,7 +10,7 @@ class Admin::UploadResourceController < Admin::AdminController
       path = File.join(directory, r.id.to_s + r.ext)
       
       File.open(path, "wb") { |f| f.write(params[:datafile].read) }
-      render :text => "File has been uploaded successfully"
+     # render :text => "File has been uploaded successfully "
     end
   end
 end

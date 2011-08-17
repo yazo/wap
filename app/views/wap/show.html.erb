@@ -32,14 +32,12 @@
 <br />
 按平台下载：<br />
 <table>
-	<% df=Downfile.where(:software_id => params[:id]).each do |file| %>
+	<% res=Resource.where(:resource_data_id => params[:id],:file_type => 'software').each do |rs|%>
 	<tr>
-	   <td align="right"> 
-	       <%= file.Platform%>	
-	   </td>
-	   <td>
-	       <a href="/downfile/<%= file.file_name %>">免费下载</a>
-	   </td>
+		
+	       <td>
+	           <a href="/upload/software/<%= rs.id %><%= rs.ext%>">免费下载</a>
+	       </td>
 	</tr>
 	<% end %>
 </table>
@@ -47,9 +45,9 @@
 简介：
 <%= s.description %>
 <br/>
-<% ph=Photo.where(:software_id => params[:id],:photo_type => '0').each do |photo|%>
+<% rei=Resource.where(:resource_data_id => params[:id],:file_type => 'img').each do |ri|%>
 
-  <img src="/images/products/<%= photo.photo_name%>" /><br />
+  <img src="/upload/img/<%= ri.id%><%= ri.ext%>" /><br />
 
 <% end %>
 

@@ -1,5 +1,5 @@
 <% current_ids = @software.software_type_ids %>
-<%= form_for([:admin,@software]) do |f| %>
+<%= form_for([:admin,@software], :html => {:multipart => true}) do |f| %>
   <% if @software.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@software.errors.count, "error") %> prohibited this software from being saved:</h2>
@@ -45,7 +45,7 @@
 	Images:
 	<% @software.resources.images.each do |img| %>
 		<label><%= img.original_filename %></label>
-	<% end %>
+	<% end %><br />
 	
 	<% Resource.images.free.each do |img| %>
 		<label><%= img.original_filename %></label>
@@ -57,12 +57,21 @@
 	<% @software.resources.softwares.each do |img| %>
 		<label><%= img.original_filename %></label>
 	<% end %>
-	
+	<br />
 	<% Resource.softwares.free.each do |img| %>
 		<label><%= img.original_filename %></label>
 		<%= check_box_tag "software[resource_ids][]", img.id, false %>
 	<% end %>
 </div>
+  <br />
+  
+  <div>
+    <label for="file">Upload:</label>
+         文件：<%= file_field_tag "datafile" %>属性：
+    <%= select_tag("file_type", "<option>img</option><option>software</option>".html_safe) %>
+
+  </div>
+  
   
   <div class="actions">
     <%= f.submit %>

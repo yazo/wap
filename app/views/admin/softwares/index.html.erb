@@ -12,13 +12,14 @@
 
 <% @softwares.each do |software| %>
   <tr>
+  	 <td><%= link_to 'Show', admin_software_path(software) %></td>
+    <td><%= link_to 'Edit', edit_admin_software_path(software) %></td>
+    <td><%= link_to 'Destroy', admin_software_path(software), :confirm => 'Are you sure?', :method => :delete %></td>
+
     <td><%= software.title %></td>
     <td><%= software.description %></td>
     <td><%= software.language %></td>
-    <td><%= link_to 'Show', admin_software_path(software) %></td>
-    <td><%= link_to 'Edit', edit_admin_software_path(software) %></td>
-    <td><%= link_to 'Destroy', admin_software_path(software), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+     </tr>
 <% end %>
 </table>
 

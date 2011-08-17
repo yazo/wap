@@ -57,7 +57,19 @@ class Admin::SoftwaresController < Admin::AdminController
   # PUT /softwares/1.xml
   def update
     @software = Software.find(params[:id])
-
+    if params[:datafile]
+      r = Resource.new
+      r.original_filename = params[:datafile].original_filename
+      r.file_type = params[:file_type]
+      r.ext = File.extname(r.original_filename)
+      r.save
+      directory = "public/upload/" + r.file_type
+      path = File.join(directory, r.id.to_s + r.ext)
+      
+      File.open(path, "wb") { |f| f.write(params[:datafile].read) }
+      @software.resources << r
+     # render :text => "File has been uploaded successfully "
+    end
     respond_to do |format|
       if @software.update_attributes(params[:software])
         format.html { redirect_to(admin_software_path(@software), :notice => 'Software was successfully updated.') }
@@ -67,6 +79,7 @@ class Admin::SoftwaresController < Admin::AdminController
         format.xml  { render :xml => @software.errors, :status => :unprocessable_entity }
       end
     end
+    
   end
 
   # DELETE /softwares/1
