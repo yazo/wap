@@ -8,5 +8,6 @@
 Image:
 <% Resource.free.order(:original_filename).each do |r| %>
 	<!--  <%= image_tag "/upload/img/#{r.id}#{r.ext}", :width => 30 %>-->
+
   <%= r.original_filename %><br />  
 <% end %>
