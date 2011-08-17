@@ -2,12 +2,11 @@
 
 <table>
   <tr>
+    <th></th>
+    <th></th>
+    <th></th>
     <th>Title</th>
-    <th>Description</th>
     <th>Language</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @softwares.each do |software| %>
@@ -17,7 +16,6 @@
     <td><%= link_to 'Destroy', admin_software_path(software), :confirm => 'Are you sure?', :method => :delete %></td>
 
     <td><%= software.title %></td>
-    <td><%= software.description %></td>
     <td><%= software.language %></td>
      </tr>
 <% end %>

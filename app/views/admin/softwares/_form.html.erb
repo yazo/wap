@@ -47,9 +47,12 @@
 		<label><%= img.original_filename %></label>
 	<% end %><br />
 	
-	<% Resource.images.free.each do |img| %>
+	<% Resource.images.free.order(:original_filename).each do |img| %>
+	<%= image_tag "/upload/img/#{img.id}#{img.ext}", :width => 30 %>
+
 		<label><%= img.original_filename %></label>
 		<%= check_box_tag "software[resource_ids][]", img.id, false %>
+		<br />
 	<% end %>
 </div>
 <div>
@@ -58,7 +61,7 @@
 		<label><%= img.original_filename %></label>
 	<% end %>
 	<br />
-	<% Resource.softwares.free.each do |img| %>
+	<% Resource.softwares.free.order(:original_filename).each do |img| %>
 		<label><%= img.original_filename %></label>
 		<%= check_box_tag "software[resource_ids][]", img.id, false %>
 	<% end %>
@@ -68,7 +71,7 @@
   <div>
     <label for="file">Upload:</label>
          文件：<%= file_field_tag "datafile" %>属性：
-    <%= select_tag("file_type", "<option>img</option><option>software</option>".html_safe) %>
+    <%= select_tag("file_type", "<option>img</option><option>software</option><option>icon</option>".html_safe) %>
 
   </div>
   
