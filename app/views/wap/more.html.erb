@@ -24,13 +24,13 @@
         
           <% main_type.softwares.each do |so| %>
 
-            
-         	 <% ph=Photo.where(:software_id => so.id,:photo_type => '1').first %>
- 					 <img src="<%= "/images/products/#{ph.photo_name}" if ph %>"  width='20px' height='20px'/>
+         	 <% logo=Resource.where(:resource_data_id => so.id,:file_type => 'icon').first %>
+ 					 <img src="<%= "/upload/icon/#{logo.id}#{logo.ext}" if logo %>"  width='30px' height='30px'/>
 					 <a href="/software/<%= so.id %>"><%= so.title %></a><br />	
-			<% end %>
+			
+		  <% end %>
 
-    
+         
     <% end %>
 
 	

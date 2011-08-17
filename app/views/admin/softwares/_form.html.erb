@@ -48,9 +48,9 @@
 	<% end %><br />
 	
 	<% Resource.images.free.order(:original_filename).each do |img| %>
-	<%= image_tag "/upload/img/#{img.id}#{img.ext}", :width => 30 %>
+	<%= image_tag "/upload/#{img.file_type}/#{img.id}#{img.ext}", :width => 30 %>
 
-		<label><%= img.original_filename %></label>
+		<label><%= img.id %><%= img.ext%></label>
 		<%= check_box_tag "software[resource_ids][]", img.id, false %>
 		<br />
 	<% end %>

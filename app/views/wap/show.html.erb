@@ -13,8 +13,8 @@
 
 <body>
 <a href="/">返回首页</a><br/>
-<% ph=Photo.where(:software_id => params[:id],:photo_type => '1').each do |photo|%>
-  <img src="/images/products/<%= photo.photo_name %>" width="48px" height="48px"/>
+<% rl=Resource.where(:resource_data_id => params[:id],:file_type => 'icon').each do |logo|%>
+  <img src="/upload/icon/<%= logo.id %><%= logo.ext%>" width="48px" height="48px"/>
 <% end %>
 
 &nbsp;<%= s.title %><br />
