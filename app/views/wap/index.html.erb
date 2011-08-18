@@ -45,7 +45,7 @@
 			<table>
 				<tr>
 					<td rowspan="2" height="50" width="55"><img src="/images/logo.jpg" height="50" width="50"/></td>
-					<td><a href="/content/ndesk.html">N桌面</a></td>
+					<td><a href="/software/6">N桌面</a></td>
 				</tr>
 				<tr>
 					<td>类型：应用软件 系统</td>
@@ -75,7 +75,7 @@
 		</div>
 		
 			<% main_type.children.each do |t| %>
-				[<a href="/app_system.html"><%= t.title%></a>]&nbsp; 
+				[<a href=""><%= t.title%></a>]&nbsp; 
 				<% t.softwares.limit(3).each do |s| %>
 
 					<a href="/software/<%= s.id %>"><%= s.title %></a>&nbsp;
